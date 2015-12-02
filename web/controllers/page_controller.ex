@@ -6,6 +6,7 @@ defmodule SampleServices.PageController do
   end
 
   def color(conn, _params) do
+    :random.seed(:erlang.now)
     color = Enum.random([
         "aliceblue",
         "antiquewhite",
