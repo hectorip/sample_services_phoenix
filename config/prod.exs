@@ -23,7 +23,7 @@ config :sample_services, SampleServices.Endpoint,
 config :logger, level: :info
 
 # Configure your database
-config :hello_phoenix, HelloPhoenix.Repo,
+config :sample_services, SampleServices.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
   pool_size: 20
