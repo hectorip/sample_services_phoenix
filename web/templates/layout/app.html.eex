@@ -7,8 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Phoenix!</title>
+    <title>Sample Services</title>
+
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <script src="<%= static_path(@conn, "/vendor/bower_components/webcomponentsjs/webcomponents.js") %>"></script>
+    <link rel="import" href="<%= static_path(@conn, "/vendor/bower_components/polymer/polymer.html") %>">
   </head>
 
   <body>
