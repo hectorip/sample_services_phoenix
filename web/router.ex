@@ -10,6 +10,7 @@ defmodule SampleServices.Router do
   end
 
   pipeline :api do
+    plug Corsica, origins: ["http://localhost.dev"]
     plug :accepts, ["json"]
   end
 
@@ -17,11 +18,11 @@ defmodule SampleServices.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/color", PageController, :color
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", SampleServices do
-  #   pipe_through :api
-  # end
+  scope "/api", SampleServices do
+    pipe_through :api
+    get "/color", PageController, :color
+  end
 end
