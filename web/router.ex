@@ -10,8 +10,8 @@ defmodule SampleServices.Router do
   end
 
   pipeline :api do
-    plug Corsica, origins: ["http://localhost.dev"]
     plug :accepts, ["json"]
+    plug CORSPlug, [origin: "*"]
   end
 
   scope "/", SampleServices do
