@@ -1,0 +1,23 @@
+<h2>Show step</h2>
+
+<ul>
+
+  <li>
+    <strong>Beat:</strong>
+    <%= @step.beat %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @step.url %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @step.name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: step_path(@conn, :edit, @step) %>
+<%= link "Back", to: step_path(@conn, :index) %>

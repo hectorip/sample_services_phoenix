@@ -18,11 +18,14 @@ defmodule SampleServices.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/steps", StepController
   end
 
   # Other scopes may use custom stacks.
   scope "/api", SampleServices do
     pipe_through :api
     get "/color", PageController, :color
+    get "/getRandom/:beat", StepController, :get
+
   end
 end

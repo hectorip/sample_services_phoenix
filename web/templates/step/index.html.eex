@@ -1,0 +1,30 @@
+<h2>Listing steps</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Beat</th>
+      <th>Url</th>
+      <th>Name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for step <- @steps do %>
+    <tr>
+      <td><%= step.beat %></td>
+      <td><%= step.url %></td>
+      <td><%= step.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: step_path(@conn, :show, step), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: step_path(@conn, :edit, step), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: step_path(@conn, :delete, step), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New step", to: step_path(@conn, :new) %>
