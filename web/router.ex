@@ -25,6 +25,7 @@ defmodule SampleServices.Router do
   scope "/api", SampleServices do
     pipe_through :api
     get "/color", PageController, :color
+    get "/phunt", ProductHuntController, :search
     get "/getRandom/:beat", StepController, :get
 
   end

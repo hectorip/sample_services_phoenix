@@ -19,7 +19,7 @@ defmodule SampleServices.Mixfile do
   def application do
     [mod: {SampleServices, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex,]]
+                    :phoenix_ecto, :postgrex, :httpoison, :poison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +37,9 @@ defmodule SampleServices.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
      {:plug, "~> 1.0"},
-     {:cors_plug, "~> 0.1.4"}]
+     {:cors_plug, "~> 0.1.4"},
+     {:httpoison, "~> 0.8.0"},
+     {:poison, "~> 2.1"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
