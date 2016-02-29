@@ -38,8 +38,8 @@ defmodule SampleServices.Mixfile do
      {:cowboy, "~> 1.0"},
      {:plug, "~> 1.0"},
      {:cors_plug, "~> 0.1.4"},
-     {:httpoison, "~> 0.8.0"},
-     {:poison, "~> 2.1"}]
+     {:httpoison, "~> 0.8.0"}
+    ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
