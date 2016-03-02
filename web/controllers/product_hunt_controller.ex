@@ -9,7 +9,9 @@ defmodule SampleServices.ProductHuntController do
     HTTPoison.start
     url = "https://api.producthunt.com/v1/posts"
     api_token = System.get_env("API_TOKEN_PH")
+
     { :ok, doby } = HTTPoison.get(url, [{"Authorization", "Bearer " <> api_token}])
+
     data = Poison.decode!(doby.body)
     
     json conn, %{product: Enum.random(data["posts"])}
