@@ -8,7 +8,7 @@ defmodule SampleServices.ProductHuntController do
   def search(conn, _params) do
     HTTPoison.start
     url = "https://api.producthunt.com/v1/posts"
-    api_token = System.get_env("API_TOKEN_PH")
+    api_token = System.get_env("API_TOKEN_PHUNT")
 
     { :ok, doby } = HTTPoison.get(url, [{"Authorization", "Bearer " <> api_token}])
 
